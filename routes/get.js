@@ -6,11 +6,11 @@ router.get("/users", (req, res) => {
 });
 
 router.get("/user/:id", (req, res) => {
-  const id = req.params.id;
+  const id = Number(req.params.id);
 
   //defensive checks
   //check id is a number or not less than 1
-  if (isNaN(id) || id < 1) {
+  if (Number.isNaN(id) || id < 1) {
     res.send({ status: 0, reason: "Invalid ID" });
     return;
   }
