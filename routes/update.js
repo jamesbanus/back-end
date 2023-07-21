@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 router.patch("/user/:id", (req, res) => {
-  console.log(req.body, req.params.id);
-
   const id = Number(req.params.id);
 
   //check id is a number
@@ -19,7 +17,7 @@ router.patch("/user/:id", (req, res) => {
   });
 
   // check user exists
-  if (indexOf < 0) {
+  if (indexOf === -1) {
     res.send({ status: 0, reason: "ID not found" });
     return;
   }
@@ -34,8 +32,6 @@ router.patch("/user/:id", (req, res) => {
   }
 
   res.send({ status: 1 });
-
-  console.log(indexOf);
 });
 
 module.exports = router;

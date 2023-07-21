@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { genRandomString } = require("../utils/maths");
 
 router.post("/user", (req, res) => {
   const { name, email } = req.body;
@@ -25,7 +26,7 @@ router.post("/user", (req, res) => {
     return;
   }
 
-  req.userData.push({ id: Math.round(Math.random() * 100000000), name, email });
+  req.userData.push({ id: genRandomString(), name, email });
 
   res.send({ status: 1 });
 });
