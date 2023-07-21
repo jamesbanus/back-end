@@ -1,42 +1,50 @@
 [
   {
-    "id": 1,
+    "userid": 1,
     "name": "James Banus",
-    "email": "jamesbanus@hotmail.com"
+    "email": "jamesbanus@hotmail.com",
+    "password": "password"
   },
   {
-    "id": 2,
+    "userid": 2,
     "name": "Joe Smith",
-    "email": "joesmith@email.com"
+    "email": "joesmith@email.com",
+    "password": "password"
   },
   {
-    "id": 3,
+    "userid": 3,
     "name": "Joe Smith",
-    "email": "joesmith@email.com"
+    "email": "joesmith@email.com",
+    "password": "password"
   },
   {
-    "id": 4,
+    "userid": 4,
     "name": "Joe Smith",
-    "email": "joesmith@email.com"
+    "email": "joesmith@email.com",
+    "password": "password"
   },
   {
-    "id": 5,
+    "userid": 5,
     "name": "Joe Smith",
-    "email": "joesmith@email.com"
+    "email": "joesmith@email.com",
+    "password": "password"
   },
   {
-    "id": 6,
+    "userid": 6,
     "name": "Joe Smith",
-    "email": "joesmith@email.com"
+    "email": "joesmith@email.com",
+    "password": "password"
   },
   {
-    "id": 7,
+    "userid": 7,
     "name": "Joe Smith",
-    "email": "joesmith@email.com"
+    "email": "joesmith@email.com",
+    "password": "password"
   },
   {
-    "id": 8,
+    "userid": 8,
     "name": "Joe Smith",
-    "email": "joesmith@email.com"
+    "email": "joesmith@email.com",
+    "password": "password"
   }
 ]

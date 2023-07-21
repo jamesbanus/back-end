@@ -2,23 +2,23 @@ const express = require("express");
 const router = express.Router();
 
 router.patch("/user/:id", (req, res) => {
-  const id = Number(req.params.id);
+  const userid = Number(req.params.userid);
 
-  //check id is a number
-  if (Number.isNaN(id) || id < 1) {
-    res.send({ status: 0, reason: "Invalid ID" });
+  //check userid is a number
+  if (Number.isNaN(userid) || userid < 1) {
+    res.send({ status: 0, reason: "Invalid userid" });
     return;
   }
 
-  const { name, email } = req.body;
+  const { name, email, password } = req.body;
 
   const indexOf = req.userData.findIndex((item) => {
-    return item.id === id;
+    return item.userid === userid;
   });
 
   // check user exists
   if (indexOf === -1) {
-    res.send({ status: 0, reason: "ID not found" });
+    res.send({ status: 0, reason: "userid not found" });
     return;
   }
 
@@ -29,6 +29,10 @@ router.patch("/user/:id", (req, res) => {
 
   if (email && typeof email === "string") {
     req.userData[indexOf].email = email;
+  }
+
+  if (password) {
+    req.userData[indexOf].password = password;
   }
 
   res.send({ status: 1 });

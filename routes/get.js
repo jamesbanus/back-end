@@ -6,12 +6,12 @@ router.get("/users", (req, res) => {
 });
 
 router.get("/user/:id", (req, res) => {
-  const id = Number(req.params.id);
+  const userid = Number(req.params.userid);
 
   //defensive checks
-  //check id is a number or not less than 1
-  if (Number.isNaN(id) || id < 1) {
-    res.send({ status: 0, reason: "Invalid ID" });
+  //check userid is a number or not less than 1
+  if (Number.isNaN(userid) || userid < 1) {
+    res.send({ status: 0, reason: "Invalid userid" });
     return;
   }
 
@@ -19,15 +19,20 @@ router.get("/user/:id", (req, res) => {
   const _userData = [...req.userData];
 
   const user = _userData.find((char) => {
-    return char.id === id;
+    return char.userid === userid;
   });
 
   // check user exists
   if (!user) {
-    res.send({ status: 0, reason: "ID not found" });
+    res.send({ status: 0, reason: "userid not found" });
   }
 
   res.send({ status: 1, user });
+});
+
+router.get("/useractions", (req, res) => {
+  console.log(req);
+  res.send({ status: 1, usersActions: req.userActions2 });
 });
 
 module.exports = router;
