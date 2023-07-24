@@ -24,14 +24,12 @@ router.delete("/user/:id", (req, res) => {
 
   req.userData.splice(indexOf, 1);
 
-  const result = req.userActions2.filter((item) => {
-    console.log(item.userid, userid, item.userid !== userid);
-    return item.userid !== userid;
-  });
-
-  req.userActions2 = result;
-
-  res.send({ status: 1, data: req.userActions2 });
+  for (let i = req.userActions.length - 1; i >= 0; i--) {
+    if (userid === req.userActions[i].userid) {
+      req.userActions.splice(i, 1);
+    }
+  }
+  res.send({ status: 1, data: req.userActions });
 });
 
 module.exports = router;

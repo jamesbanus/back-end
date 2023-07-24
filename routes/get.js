@@ -32,7 +32,7 @@ router.get("/user/:id", (req, res) => {
 
 router.get("/useractions", (req, res) => {
   console.log(req);
-  res.send({ status: 1, usersActions: req.userActions2 });
+  res.send({ status: 1, usersActions: req.userActions });
 });
 
 module.exports = router;
