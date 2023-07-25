@@ -29,7 +29,7 @@ router.delete("/user/:id", (req, res) => {
       req.userActions.splice(i, 1);
     }
   }
-  res.send({ status: 1, data: req.userActions });
+  res.send({ status: 1 });
 });
 
 module.exports = router;
