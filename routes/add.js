@@ -42,7 +42,6 @@ router.post("/favourite", (req, res) => {
 
   //check contents
   if (typeof favourite !== "boolean") {
-    console.log(typeof favourite, typeof favourite !== "boolean");
     res.send({ status: 0, reason: "Incomplete Request" });
     return;
   }
@@ -77,7 +76,6 @@ router.post("/rating", (req, res) => {
 
   //check contents
   if (!rating || typeof rating !== "number") {
-    console.log(typeof rating, typeof rating === "number");
     res.send({ status: 0, reason: "Incomplete Request" });
     return;
   }

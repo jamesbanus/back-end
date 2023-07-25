@@ -7,7 +7,6 @@ router.delete("/user/:id", (req, res) => {
   //defensive checks
   //check userid is a number or not less than 1
   if (isNaN(userid) || userid < 1) {
-    // console.log(userid);
     res.send({ status: 0, reason: "Invalid userid" });
     return;
   }

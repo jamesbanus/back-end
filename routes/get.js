@@ -9,7 +9,6 @@ router.get("/users", (req, res) => {
 //get user by id
 router.get("/user/:id", (req, res) => {
   const userid = Number(req.params.id);
-  console.log(userid);
 
   //defensive checks
   //check userid is a number or not less than 1
@@ -36,7 +35,6 @@ router.get("/user/:id", (req, res) => {
 
 //get all user actions
 router.get("/useractions", (req, res) => {
-  console.log(req);
   res.send({ status: 1, usersActions: req.userActions });
 });
 
@@ -68,7 +66,6 @@ router.get("/useractions/:id", (req, res) => {
 //get all user actions by movieid
 router.get("/useractionsmovie/:movieid", (req, res) => {
   const movieid = Number(req.params.movieid);
-  console.log(movieid);
 
   //defensive checks
   //check userid is a number or not less than 1
